@@ -1,0 +1,30 @@
+GET http://localhost:4004/odata/v4/library-srv/BooksSet HTTP/1.1
+
+###
+GET http://localhost:4004/odata/v4/library-srv/BooksSet(11111111-1111-1111-1111-111111111111) 
+
+###
+POST  http://localhost:4004/odata/v4/library-srv/BooksSet
+Content-Type: application/json
+
+{
+      "title": "SAP AI Launchapd",
+      "author": "Mathew J",
+      "price": "85.99",
+      "publishedDate": "2025-08-01T00:00:00Z",
+      "digitalCopy": true
+}
+###
+PUT  http://localhost:4004/odata/v4/library-srv/BooksSet(50128a25-c2c4-4743-b05a-9a443445c92c)
+Content-Type: application/json
+
+{
+      "title": "SAP AI Launchapd with Joule",
+      "author": "Mathew J",
+      "price": "85.99",
+      "publishedDate": "2025-08-01T00:00:00Z",
+      "digitalCopy": true
+}
+
+###
+DELETE http://localhost:4004/odata/v4/library-srv/BooksSet(d147d11d-e88c-466b-b115-ab6f5b5955e9)
