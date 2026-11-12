@@ -51,7 +51,7 @@ const db = cds.db;
                 
         })
         .catch(err=>{
-            return req.error(500, 'Server is down, Try again'+err.toString());
+            return req.error(500, 'Server is down now, Try again'+err.toString());
         })
         return results;
    });  
