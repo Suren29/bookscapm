@@ -2,12 +2,45 @@
   "name": "bookscapm",
   "version": "1.0.0",
   "description": "Welcome to your new CAP project.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cds-serve",
+    "watch-bookscapmui": "cds watch --open bookscapmui/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy bookscapm --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
   },
+  "private": "true",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "@cap-js/hana": "^3",
+    "@sap/cds": "10.2.2",
+    "@sap/xssec": "^4.16.0",
+    "express": "5.3.0"
+  },
+  "cds": {
+    "requires": {
+      "[production]": {
+        "db": "hana"
+      }
+    },
+    "server": {
+      "index": true
+    }
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "3.1.3",
+    "@sap/cds-dk": "^10",
+    "cds-plugin-ui5": "^0.17.4",
+    "mbt": "^1.2.49",
+    "rimraf": "^5.0.5"
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/bookscapmui"
+  ]
 }
