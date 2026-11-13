@@ -21,7 +21,37 @@
     "express": "5.3.0"
   },
   "cds": {
+    "sql": {
+      "native_hana_associations": false
+    },
     "requires": {
+      "auth": {
+        "[production]": {
+          "strategy": "JWT"
+        },
+        "[development]": {
+          "strategy": "mocked",
+          "users": {
+            "surendra": {
+              "password": "welcome1",
+              "roles": [
+                "Admin"
+              ]
+            },
+            "kid1": {
+              "password": "welcome2",
+              "roles": [
+                "Kids"
+              ],
+              "userAttributes": {
+                "booksAgeGroup": [
+                  "KIDS"
+                ]
+              }
+            }
+          }
+        }
+      },
       "[production]": {
         "db": "hana"
       }

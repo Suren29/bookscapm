@@ -32,6 +32,11 @@ annotate service.BooksSet with @(
                 Label : 'digitalCopy',
                 Value : digitalCopy,
             },
+            {
+                $Type : 'UI.DataField',
+                Label : 'booksAgeGroup',
+                Value : booksAgeGroup,
+            },             
         ],
     },
     UI.Facets : [
@@ -68,6 +73,11 @@ annotate service.BooksSet with @(
             Label : 'digitalCopy',
             Value : digitalCopy,
         },
+        {
+            $Type : 'UI.DataField',
+            Label : 'booksAgeGroup',
+            Value : booksAgeGroup,
+        },        
     ],
 );
 
